@@ -4,12 +4,12 @@ A JSON-based data exchange format for Project and Issue tracking systems meant t
 
 ## Introduction
 
-The number of project and issue tracking system is fastly growing but this fastly evolving environment
+The number of project and issue tracking system is quickly growing but this evolving environment
 lacks of a common data structure to exchange projects, issues (tasks, bugs...)
 which results in little to no interoperability.
 
 **The Projects and Issues Exchange Format** aims to provide a common format for exchanging data between
-the existings platforms that could be exposed via APIs or as an export/import format.
+the existing platforms that could be exposed via APIs or as an export/import format.
 
 ## Scope
 
@@ -35,7 +35,7 @@ RFC 2119.
 
 http://www.ietf.org/rfc/rfc2119.txt
 
-### Date, Time and Duraction
+### Date, Time and Duration
 
 * Dates should be formatted as recommended by RFC 3339.
 * Time durations should be formatted as recommended by ISO 8601.
@@ -44,7 +44,7 @@ http://www.ietf.org/rfc/rfc2119.txt
 
 * The platform serving the data (via API and/or export) MUST propose at least the JSON format.
 * Data MAY be proposed in other format than JSON as an option.
-* When a field is required but countains no data in JSON, it MUST use the **null** JSON value.
+* When a field is required but contains no data in JSON, it MUST use the **null** JSON value.
 * An un-set, unknown or empty field MUST NOT use an empty string.
 
 ### Fields
@@ -59,7 +59,7 @@ This part of the requirements specifies the root fields of the data format.
 
 ## Export Origin
 
-The part of the requirements specifies the fields of the **exportOrigin** Object definied at the root
+The part of the requirements specifies the fields of the **exportOrigin** Object defined at the root
 
 * MUST have a **name** field representing the name of the tool or platform that generated the data.
 * SHOULD have a **version** field representing the version of the tool or platform that generated the data.
