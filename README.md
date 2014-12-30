@@ -45,33 +45,39 @@ http://www.ietf.org/rfc/rfc2119.txt
 * The platform serving the data (via API and/or export) MUST propose at least the JSON format.
 * Data MAY be proposed in other format than JSON as an option.
 * When a field is required but contains no data in JSON, it MUST use the **null** JSON value.
-* An un-set, unknown or empty field MUST NOT use an empty string.
+* A field with no value MUST NOT use an empty string.
 
 ### Fields
 
 This part of the requirements specifies the root fields of the data format.
 
-* MUST have a **projects** field as an Array of containing the list of projects as Objects.
+* MUST have a **projects** field as an Array containing the list of projects as Objects.
 * MUST have a **issues** field as an Array containing the list of issues as Objects.
 * SHOULD have a **version** field as a string representing the version of the PIEF used to create the data.
 * SHOULD have a **exportDate** field as a string representing the data creation date.
 * SHOULD have a **exportOrigin** field as an Object providing information on the tool or platform that generated the data.
 
-## Export Origin
+### Export Origin
 
 The part of the requirements specifies the fields of the **exportOrigin** Object defined at the root
 
 * MUST have a **name** field representing the name of the tool or platform that generated the data.
 * SHOULD have a **version** field representing the version of the tool or platform that generated the data.
 
-## Project
+### Project
 
 * MUST have a **name** field as a string representing the project name.
-* MUST have an **id** field as a string representing the project unique identifier. 
+* MUST have an **id** field as a string representing the project unique identifier.
+* MUST have a **members** field as an Array defining the project members and their role.
 * SHOULD have a **description** field as a string representing the project description.
 * SHOULD have a **parentId** field as a string representing the unique identifier of the parent project (if any).
-* SHOULD have a **authorId** field as a string representing the unique identifier of 
+* SHOULD have a **authorId** field as a string representing the unique identifier of an user.
 * SHOULD have a **creationDate** field as a string representing the project creation date.
 * SHOULD have a **lastUpdate** field as a string representing the project last update date.
 
-## Issue
+#### Member
+
+* MUST have an **id** field as a string representing the unique identifier of an user.
+* MUST have a **role** field as a string representing the role of the user in the project.
+
+### Issue
