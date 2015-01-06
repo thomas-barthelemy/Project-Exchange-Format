@@ -62,8 +62,8 @@ This part of the requirements specifies the root fields of the data format.
 
 The part of the requirements specifies the fields of the **exportOrigin** Object defined at the root
 
-* MUST have a **name** field representing the name of the tool or platform that generated the data.
-* SHOULD have a **version** field representing the version of the tool or platform that generated the data.
+* MUST have a **name** field as a string representing the name of the tool or platform that generated the data.
+* SHOULD have a **version** field as a string representing the version of the tool or platform that generated the data.
 
 ### Project
 
@@ -72,7 +72,7 @@ The part of the requirements specifies the fields of the **exportOrigin** Object
 * MUST have a **members** field as an Array defining the project members and their role.
 * SHOULD have a **description** field as a string representing the project description.
 * SHOULD have a **parentId** field as a string representing the unique identifier of the parent project (if any).
-* SHOULD have a **authorId** field as a string representing the unique identifier of an user.
+* SHOULD have a **authorId** field as a string representing the unique identifier of the user who created the issue.
 * SHOULD have a **creationDate** field as a string representing the project creation date.
 * SHOULD have a **lastUpdate** field as a string representing the project last update date.
 
@@ -82,3 +82,21 @@ The part of the requirements specifies the fields of the **exportOrigin** Object
 * MUST have a **role** field as a string representing the role of the user in the project.
 
 ### Issue
+
+* MUST have an **id** field as a string representing the issue unique identifier.
+* MUST have a **title** field as a string representing the issue title or subject.
+* MUST have an **authorId** field as a string representing the unique identifier of the user who created the issue.
+* MUST have an **assigneeId** field as a string representing the unique identifier of the user assigned to the issue.
+* MUST have a **status** field as an integer representing the issue status as explained below:
+	* 0 (Default): Newly created issue (New).
+	* 1: The issue is being worked on (In Progress).
+	* 2: The issue is completed and awaiting validation (Resolved).
+	* 3: The issue is either validated, or terminated prematurely (Closed).
+* SHOULD have a **creationDate** field as a string representing the issue creation date.
+* SHOULD have a **dueDate** field as a string representing the issue due date.
+* SHOULD have a **timeSpent** field as a string representing the total time spent (duration) on the issue.
+* SHOULD have a **type** field as an integer representing the issue type as explained below:
+	* 0 (Default): Task.
+	* 1: Bug.
+	* 2: Story.
+* SHOULD have a **tags** field as an array of string representing the tags associated with the issue.
