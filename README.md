@@ -46,6 +46,7 @@ http://www.ietf.org/rfc/rfc2119.txt
 * Data MAY be proposed in other format than JSON as an option.
 * When a field is required but contains no data in JSON, it MUST use the **null** JSON value.
 * A field with no value MUST NOT use an empty string.
+* Additional fields not described here MAY be added in any element (project, issue, origin...) for a specific need and SHOULD be simply ignored when not needed.
 
 ### Fields
 
